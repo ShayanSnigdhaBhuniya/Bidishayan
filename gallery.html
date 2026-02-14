@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Photos</title>
+
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+/* BODY */
+body{
+background:#111;
+color:white;
+text-align:center;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+/* TITLE */
+h1{
+margin-top:30px;
+}
+
+/* RESPONSIVE GALLERY GRID */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
+gap:18px;
+padding:25px;
+max-width:1200px;
+margin:auto;
+}
+
+/* IMAGE STYLE */
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+box-shadow:0 0 15px pink;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* BACK LINK */
+a{
+color:pink;
+display:block;
+margin:30px;
+text-decoration:none;
+font-size:18px;
+}
+
+/* FLOATING HEARTS */
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:float 6s linear infinite;
+color:white;
+opacity:0.7;
+pointer-events:none;
+z-index:-1;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+100%{transform:translateY(-110vh)}
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+.gallery{
+grid-template-columns:repeat(auto-fit, minmax(140px,1fr));
+gap:12px;
+padding:15px;
+}
+
+.gallery img{
+height:160px;
+}
+
+h1{
+font-size:24px;
+}
+
+a{
+font-size:16px;
+}
+
+}
+
+@media (max-width:480px){
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.gallery img{
+height:200px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- mobile friendly music -->
+<audio autoplay loop >
+<source src="bgmemories.mpeg" type="audio/mpeg">
+</audio>
+
+<h1>📸 Our Beautiful Moments</h1>
+
+<div class="gallery">
+<img src="photo7.jpeg">
+<img src="photo8.jpeg">
+<img src="photo9.jpeg">
+<img src="photo10.jpeg">
+<img src="photo11.jpeg">
+<img src="photo12.jpeg">
+<img src="photo13.jpeg">
+<img src="photo14.jpeg">
+<img src="photo15.jpeg">
+<img src="photo16.jpeg">
+<img src="photo17.jpeg">
+<img src="photo18.jpeg">
+<img src="photo19.jpeg">
+<img src="photo20.jpg">
+<img src="photo21.jpg">
+<img src="photo22.jpg">
+<img src="photo23.jpg">
+<img src="photo24.jpg">
+<img src="photo25.jpg">
+<img src="photo26.jpg">
+<img src="photo27.jpg">
+<img src="photo28.jpg">
+<img src="photo29.jpg">
+<img src="photo30.jpg">
+<img src="photo31.jpg">
+<img src="photo32.jpg">
+<img src="photo33.jpg">
+<img src="photo34.jpg">
+<img src="photo35.jpg">
+<img src="photo36.jpg">
+<img src="photo37.jpg">
+<img src="photo38.jpg">
+<img src="photo39.jpg">
+<img src="photo40.jpg">
+<img src="photo41.jpg">
+<img src="photo42.jpg">
+<img src="photo43.jpg">
+<img src="photo44.jpg">
+<img src="photo45.jpg">
+<img src="photo46.jpg">
+<img src="photo47.jpg">
+<img src="photo48.jpg">
+<img src="photo49.jpg">
+<img src="photo51.jpg">
+<img src="photo52.jpg">
+<img src="photo53.jpg">
+<img src="photo54.jpg">
+<img src="photo56.jpg">
+<img src="photo57.jpg">
+</div>
+
+<a href="index.html">⬅ Back to Home</a>
+
+<script>
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+}
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Memories</title>
+
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+/* BODY */
+body{
+text-align:center;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+color:#333;
+overflow-x:hidden; /* allow vertical scroll */
+}
+
+/* CONTENT BOX */
+.box{
+background:white;
+padding:40px;
+margin:80px auto;
+width:90%;
+max-width:650px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+line-height:1.7;
+}
+
+/* TITLE */
+.box h1{
+margin-bottom:20px;
+}
+
+/* BACK LINK */
+a{
+display:block;
+margin:30px;
+font-size:18px;
+text-decoration:none;
+color:#b0005a;
+font-weight:bold;
+}
+
+/* FLOATING HEARTS */
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:float 6s linear infinite;
+color:white;
+opacity:0.7;
+pointer-events:none;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+100%{transform:translateY(-110vh)}
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+.box{
+padding:25px;
+margin:60px 15px;
+}
+
+.box h1{
+font-size:24px;
+}
+
+.box p{
+font-size:15px;
+}
+
+a{
+font-size:16px;
+}
+
+}
+
+@media (max-width:480px){
+
+.box{
+padding:20px;
+margin:40px 10px;
+}
+
+.box h1{
+font-size:20px;
+}
+
+.box p{
+font-size:14px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- mobile friendly audio -->
+<audio autoplay loop >
+<source src="bgmem.mpeg" type="audio/mpeg">
+</audio>
+
+<div class="box">
+<h1>💌 Our Love Story</h1>
+
+<p>
+Our love feels like a quiet sunrise — soft, warm, and full of promise.
+In the simplest moments, when words fade and only presence remains,
+I feel how deeply our hearts understand each other.
+You are the calm in my chaos, the smile that finds me even on my hardest days,
+and the gentle strength that makes everything feel possible.
+Loving you isn’t just a feeling — it’s a home I carry within me,
+a beautiful forever I want to wake up to every single day. ❤️
+</p>
+
+<p>
+First meeting at our school, Kalinagar High School ❤️<br>
+First kiss… our hearts finally spoke what words never could 💫❤️<br><br>
+First photo we clicked ❤️ You remember that day?  
+We were shy… and that moment is heaven for me ❤️
+</p>
+
+<p>Forever together… ❤️</p>
+</div>
+
+<a href="index.html">⬅ Back to Home</a>
+
+<script>
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+}
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
+
+
